@@ -5,8 +5,7 @@ namespace HW04.Task1
     class Program
     {
         static void Main(string[] args)
-        {
-
+        { 
             inputYear:
             Console.WriteLine("Введите год рождения человека");
             int birthYear = Convert.ToInt32(Console.ReadLine());
@@ -20,8 +19,6 @@ namespace HW04.Task1
                 goto inputYear;
             }
 
-
-
         inputBirthMonth:
             Console.WriteLine("Введите номер месяца рождения человека");
             int birthMonth = Convert.ToInt32(Console.ReadLine());
@@ -31,9 +28,7 @@ namespace HW04.Task1
             {
                 Console.WriteLine("Вы ввели неверное значение месяца, введите еще раз");
                 goto inputBirthMonth;
-            }
-
-           
+            }           
 
         inputNowMonth:
             Console.WriteLine("Введите номер текущего месяца");
@@ -44,12 +39,9 @@ namespace HW04.Task1
                 Console.WriteLine("Вы ввели неверное значение месяца, введите еще раз");
                 goto inputNowMonth;
             }
-
-           
+   
             int yourAge = nowYear - birthYear;
-
-            
-
+           
             if (nowMonth < birthMonth)
             {
                 yourAge = yourAge - 1;

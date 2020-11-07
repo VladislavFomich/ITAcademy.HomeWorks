@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.CSharp.RuntimeBinder;
+using System;
 
 namespace HW04.Task6
 {
@@ -7,11 +8,9 @@ namespace HW04.Task6
         static void Main(string[] args)
         {
 
-            for (int i = 90; i > 64; i--)
-            {
-                char letter = Convert.ToChar(i);
-                Console.Write(letter);
-            }
+            int a = 1;
+            char b = Convert.ToChar(a);
+            Console.WriteLine(b);
 
         }
     }

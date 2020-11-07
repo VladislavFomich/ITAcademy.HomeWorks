@@ -8,9 +8,12 @@ namespace HW04.Task6
         static void Main(string[] args)
         {
 
-            int a = 1;
-            char b = Convert.ToChar(a);
-            Console.WriteLine(b);
+
+            for (int i = 90; i > 64; i--)
+            {
+                char letter = Convert.ToChar(i);
+                Console.Write(letter);
+            }
 
         }
     }

@@ -11,7 +11,8 @@ namespace hm_06_task2
             int[] myArray = new int[arrayElement];
             int elementValue = 0;
             int elementPosition = 0;
-                        
+            int[] myArray2 = new int[arrayElement];
+            
             for (int i = 0; i < myArray.Length - 1; i++)
             {
                 Console.Write($"Введите значения элемента массива под номером {i + 1} - ");
@@ -27,23 +28,18 @@ namespace hm_06_task2
             Console.WriteLine("Введите значение оставшегося элемента ");
             elementValue = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Введите позицию в массиве оставшегося элемента ");
+            Console.WriteLine("Введите индекс элемента массива ");
             elementPosition = Convert.ToInt32(Console.ReadLine());
-            elementPosition = elementPosition - 1;
 
-                for (int i = 0; i < myArray.Length;i++)
-            {
-                if (elementPosition >= i)
-                {
-                    int ase = myArray[i + 1];
-                    myArray[i] = ase;
-                }
-            }
-            myArray[elementPosition] = elementValue;
+            int elementPosition2 = elementPosition + 1;
+            int countElement = arrayElement - elementPosition - 1;
+            Array.Copy(myArray, elementPosition, myArray2, elementPosition2, countElement);
+            myArray2[elementPosition] = elementValue;
 
+            Console.WriteLine("Ваш новый массив: ");
             for (int i = 0; i < myArray.Length; i++)
             {
-                Console.WriteLine($"\n{myArray[i]}");
+                Console.WriteLine($"\n{myArray2[i]}");
             }
         }
     }

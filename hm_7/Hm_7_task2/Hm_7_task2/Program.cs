@@ -9,7 +9,6 @@ namespace Hm_7_task2
         {
             Console.Write("Введите строку - ");
             string input = Console.ReadLine();
-
             DeliteTask(input);
             ReplacmentTask(input);
             CountTask(input);
@@ -34,6 +33,7 @@ namespace Hm_7_task2
             string str2 = string.Join(' ', str);
             Console.WriteLine($"Ваша строка без самого длинного слова - {str2}");
         }
+
         static void ReplacmentTask(string input)
         {
             string[] str = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -54,12 +54,12 @@ namespace Hm_7_task2
                     minPosition = i;
                 }
             }
-            (str[maxPosition], str[minPosition]) = (str[minPosition], str[maxPosition]);
-            
+            (str[maxPosition], str[minPosition]) = (str[minPosition], str[maxPosition]);    
             string str2 = string.Join(' ', str);
             Console.WriteLine($"Поменяли местами самое длинное слово и самое короткое - {str2}");
             
         }
+
         static void CountTask(string input)
         {
             int letterCount = 0;
@@ -76,16 +76,15 @@ namespace Hm_7_task2
             Console.WriteLine($"Количество букв в строке = {letterCount}");
             Console.WriteLine($"Количество знаков препинания в строке = {punctuationCount}");
         }
+
         static void SortingTask(string input)
         {
-            string[] str = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-           
+            string[] str = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);   
             Array.Sort(str);
             Array.Reverse(str);
             Console.WriteLine("Отсортированный массив:");
             for (int i = 0; i < str.Length; i++)
                 Console.WriteLine(str[i]);
-            
         }
     }
 }

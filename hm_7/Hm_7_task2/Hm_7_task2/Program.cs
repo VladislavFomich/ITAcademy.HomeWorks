@@ -7,11 +7,13 @@ namespace Hm_7_task2
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите строку -");
+            Console.Write("Введите строку - ");
             string input = Console.ReadLine();
 
             DeliteTask(input);
             ReplacmentTask(input);
+            CountTask(input);
+            SortingTask(input);
         }
 
         static void DeliteTask(string input)
@@ -36,7 +38,7 @@ namespace Hm_7_task2
         {
             string[] str = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int maxLenght = 0;
-            int maxposition = 0;
+            int maxPosition = 0;
             int minPosition = 0;
 
             for (int i = 0; i < str.Length; i++)
@@ -44,7 +46,7 @@ namespace Hm_7_task2
                 if (str[i].Length > maxLenght)
                 {
                     maxLenght = str[i].Length;
-                    maxposition = i;
+                    maxPosition = i;
                 }
                 else
                 {
@@ -52,10 +54,37 @@ namespace Hm_7_task2
                     minPosition = i;
                 }
             }
-            (str[maxposition], str[minPosition]) = (str[minPosition], str[maxposition]);
+            (str[maxPosition], str[minPosition]) = (str[minPosition], str[maxPosition]);
             
             string str2 = string.Join(' ', str);
             Console.WriteLine($"Поменяли местами самое длинное слово и самое короткое - {str2}");
+            
+        }
+        static void CountTask(string input)
+        {
+            int letterCount = 0;
+            int punctuationCount = 0;
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (char.IsLetter(input[i]))
+                    letterCount++;
+                else if (char.IsPunctuation(input[i]))
+                {
+                    punctuationCount++;
+                }             
+            }
+            Console.WriteLine($"Количество букв в строке = {letterCount}");
+            Console.WriteLine($"Количество знаков препинания в строке = {punctuationCount}");
+        }
+        static void SortingTask(string input)
+        {
+            string[] str = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+           
+            Array.Sort(str);
+            Array.Reverse(str);
+            Console.WriteLine("Отсортированный массив:");
+            for (int i = 0; i < str.Length; i++)
+                Console.WriteLine(str[i]);
             
         }
     }

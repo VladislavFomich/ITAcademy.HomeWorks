@@ -79,12 +79,12 @@ namespace Hm_7_task2
 
         static void SortingTask(string input)
         {
-            string[] str = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);   
-            Array.Sort(str);
-            Array.Reverse(str);
+            string[] str = input.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] strSort = str.OrderBy(x => x.Length).ToArray();
+            Array.Reverse(strSort);
             Console.WriteLine("Отсортированный массив:");
-            for (int i = 0; i < str.Length; i++)
-                Console.WriteLine(str[i]);
+            for (int i = 0; i < strSort.Length; i++)
+                Console.WriteLine(strSort[i]);
         }
     }
 }

@@ -7,14 +7,16 @@ namespace hm_8_task1
     {
         static void Main(string[] args)
         {
-            StringBuilder sb = new StringBuilder("1a!2.3!!..4.!.?6 7! ..?");
-
-            for (int i = 16; i <= '?'; i++)
-                sb.Replace(' ', '_');
-
+            StringBuilder sb = new StringBuilder("1a!2.3!!.. 4.!.?6 7! ..?");         
             sb.Remove(2, 1);
             sb.Remove(5, 2);
-            sb.Remove(9, 1);
+            sb.Remove(10, 1);
+
+            for (int i = 12; i < sb.Length-1; i++)
+            {
+                if (sb[i] == ' ')
+                    sb[i] = '_';
+            }
             Console.WriteLine(sb);
         }
     }

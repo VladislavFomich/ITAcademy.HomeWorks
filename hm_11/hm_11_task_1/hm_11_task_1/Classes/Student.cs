@@ -12,8 +12,7 @@ namespace hm_11_task_1
         }
         public void ShowAge()
         {
-            Console.WriteLine($"My age is: {n} years old");
-           
+            Console.WriteLine($"My age is: {n} years old");          
         }
     }
 }

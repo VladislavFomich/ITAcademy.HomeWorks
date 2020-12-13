@@ -6,33 +6,10 @@ namespace Checkin
 {
   abstract class Checkin
     {
-         string name;
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-       private string passport;
-        public string Passport
-        {
-            get { return passport; }
-            set { passport = value; }
-        }
-
-       private  int ticketNum;
-        public int Ticketnum
-        {
-            get { return ticketNum; }
-            set { ticketNum = value; }
-        }
-
-        private string adress;
-        public string Adress
-        {
-            get { return adress; }
-            set { adress = value; }
-        }
+        public static string Name;
+        public static string Passport;
+        public static int TicketNum;
+        public static string Adress;  
     }
 
     class Registration : Checkin
@@ -103,7 +80,7 @@ namespace Checkin
             Console.WriteLine("Введите паспортные данные (серия и номер):");
             Passport = Console.ReadLine();
             Console.WriteLine("Укажите количество билетов: ");
-            Ticketnum = Convert.ToInt32(Console.ReadLine());
+            TicketNum = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Спасибо, переходите на досмотр.");
         }
     }
@@ -136,7 +113,7 @@ namespace Checkin
         public void Over()
         {
             Console.WriteLine($"{Adress}, эти данные верны?");
-            Console.WriteLine($"Имя - {Name}, Паспортные данные - {Passport}, Количество билетов - {Ticketnum}");
+            Console.WriteLine($"Имя - {Name}, Паспортные данные - {Passport}, Количество билетов - {TicketNum}");
             Console.WriteLine("1 - Да, 2 - Нет.");
             string overSelection = Console.ReadLine();
             switch (overSelection)
